@@ -2,15 +2,32 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Website</th>
+    <style>
+      table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;}
+      th, td {padding: 15px;}
+      
+    </style>
+      <tr>
+        <th>Name</th>
+        <th>Website</th>
+        <!-- <th>Hours</th> -->
 <!-- beast mode 
       <th>Today's Hours</th>
     -->
-    </tr>
+      </tr>
   </thead>
   <tbody>
+    <% @restaurants.each do |restaurant| %>
+    <tr>
+    <td><%= restaurant.name %></td>
+    <td><%= link_to restaurant.website %></td>
+   <!--  <td><%= restaurant.hours %></td> -->
+    <% end %>
   <!-- show restaurants here -->
   </tbody>
 </table>
+
+
+
