@@ -1,20 +1,21 @@
 <h1><%= @restaurant.name %></h1>
 
-<h2>Hours</h2>
+<h2>Basic Info</h2>
 <table>
   <thead>
     <tr>
-      <th>Day</th>
-      <th>Open</th>
-      <th>Close</th>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Prices</th>
+      <th>Hours</th>
     </tr>
   </thead>
   <tbody>
-    <% @restaurant.hours.each do |??| %>
       <tr>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
+        <td><%= @restaurant.name %></td>
+        <td><%= @restaurant.website %></td>
+        <td>$<%= @restaurant.high_price %> - $<%= @restaurant.low_price %></td>
+        <td><%= @restaurant.hours %></td>
       </tr>
   </tbody>
 </table>
