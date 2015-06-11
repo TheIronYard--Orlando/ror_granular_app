@@ -1,20 +1,27 @@
-<h1><%= @restaurant.name %></h1>
-
-<h2>Hours</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Open</th>
-      <th>Close</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @restaurant.hours.each do |??| %>
+<center><h1><%= @restaurant.name %></h1></center>
+<br>
+<br>
+<center><h2>Business Hours :</h2></center>
+  <style> table, th, td
+      {border: 2px solid black; width: 35%; padding: 10px; text-align: center} 
+  </style>
+<tbody>
+    <center><table>
       <tr>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
+        <th> Days </th>
+        <th> Opens </th>
+        <th> Closes </th>
       </tr>
-  </tbody>
-</table>
+        <tr>
+          # <% @restaurants.each do |rest| %>
+
+          <td> <%= rest. *DAYS* %> </td>
+          <td> <%= rest. *OPENS * %> </td>
+          <td> <%= rest. *CLOSES* %> </td>
+        </tr>       
+          <% end %>    
+      </table></center>      
+    </tbody>
+
+
+
