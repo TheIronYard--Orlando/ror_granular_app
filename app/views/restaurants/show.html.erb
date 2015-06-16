@@ -1,6 +1,6 @@
 <h1><%= @restaurant.name %></h1>
 
-<h2>Hours</h2>
+<h2>Business Hours : </h2>
 <table>
   <thead>
     <tr>
@@ -10,11 +10,22 @@
     </tr>
   </thead>
   <tbody>
-    <% @restaurant.hours.each do |??| %>
+    <% @restaurant.hours.each do |day, hours| %>
       <tr>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
+        <td><%= day %></td>
+        <td><%= hours["Open"] %></td>
+        <td><%= hours["Closed"] %></td>
       </tr>
+        <% end %>
   </tbody>
-</table>
+</table>  
+    <br>
+    <br>
+        <%= link_to 'Edit this restaurant', edit_restaurant_path  %>
+    <br>
+    <br>    
+          <%= link_to 'Delete this restaurant', delete_restaurant_path  %>
+    <br>
+    <br>
+        <%= link_to 'Return to Home Page', root_path %>
+

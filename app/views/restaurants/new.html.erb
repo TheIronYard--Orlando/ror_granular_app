@@ -1,2 +1,27 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<h1>Add a New Restaurant</h1>
+<br>
+<br>
+<%= form_for @restaurant do |f| %>
+		<%= f.label :name %>		
+		<%= f.text_field :name, :size => 80 %>	
+<br>
+<br>	<%= f.label :website, "Website     wwww." %>
+		<%= f.text_field :website, :size => 77 %>
+<!-- <br>
+<br>
+		<%= #f.label :hours, "Days, Open and Closed Hours" %>
+		<%= #f.text_field :hours, :size => 80 %>	
+<br> -->
+<br>
+		<%= f.label :low_price, "Low range price   $" %>
+		<%= f.text_area :low_price %> 
+<br>	
+<br>
+		<%= f.label :high_price, "High range price   $" %>
+		<%= f.text_area :high_price %> 
+<br>	
+<br>
+		<%= f.submit %>   						
+	<% end %>
+
+

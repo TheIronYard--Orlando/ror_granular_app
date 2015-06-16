@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  
+  root 'restaurants#index'
+
   resources :restaurants
+
+  get 'restaurants/:id/destroy' => 'posts#destroy',  as: :delete_restaurant
+
+  
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
