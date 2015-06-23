@@ -35,7 +35,6 @@ class RestaurantsController < ApplicationController
 
 	def destroy
 		@restaurant = Restaurant.find(params[:id]).destroy!
-  		@restaurant.Restaurant.new
   		redirect_to root_url
 	end
 
