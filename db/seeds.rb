@@ -14,3 +14,9 @@ JSON.parse(restaurants).each do |restaurant|
                     high_price: restaurant['price'][1],
                     hours: restaurant['hours'])
 end
+
+
+
+
+
+

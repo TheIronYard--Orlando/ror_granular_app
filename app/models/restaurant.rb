@@ -6,6 +6,6 @@ class Restaurant < ActiveRecord::Base
   protected
 
     def set_hours
-      self.hours = []
+      self.hours ||= []
     end
 end
