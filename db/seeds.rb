@@ -16,6 +16,17 @@ JSON.parse(restaurants).each do |restaurant|
 end
 
 
+%w(Heidi Coral Emra Orion).each do |name|
+  User.create(name: name, password: name[1..-1])
+end
+
+
+
+
+
+
+
+
 
 
 
