@@ -31,7 +31,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
-      redirect_to root_url
+      redirect_to root_url, notice: "Thank you for adding #{@restaurant.name}."
+      
     else
       render 'new'
     end
