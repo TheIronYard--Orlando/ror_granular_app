@@ -1,7 +1,5 @@
 class Restaurant < ActiveRecord::Base
  
-  serialize :hours   
-  before_create :set_hours
   has_many :daily_schedules
 
   protected
