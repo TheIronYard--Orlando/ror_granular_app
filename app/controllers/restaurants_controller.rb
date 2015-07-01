@@ -31,6 +31,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
+      flash[:new] = "New restaurant successfully added to database!"
       redirect_to root_url
     else
       render 'new'
