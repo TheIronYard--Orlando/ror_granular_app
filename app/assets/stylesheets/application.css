@@ -23,3 +23,7 @@
   background-color: #33cc33;
   border: green;
 }
+
+.delete {
+  display: none;
+}

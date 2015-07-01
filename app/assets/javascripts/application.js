@@ -14,11 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(myJS);
+$(document).on('page:load', myJS);
+var myJS;
 
-var myJS = function(){
+myJS = function() {
+
   $('.notice').fadeOut(5000);
-  
-  $( "#new_restaurant" ).submit(function( event ) { 
+  $( "#new_restaurant" ).submit(function( event ) {
     var invalid = false;
     $("input[name*='restaurant']").each(function(){
       if($(this).val() == ''){
@@ -28,18 +31,15 @@ var myJS = function(){
     if(invalid){
       alert("form not complete");
       event.preventDefault();
-      return false // event.preventDefault didn't seem to do the job by itself
-    }
-/* or...
-    if($("input[name*='restaurant']").filter(function(){
-      return $(this).val() != ''
-    }).length){
-      //alert, etc
     }
   });
-*/
-    
-  });
-}
-$(myJS);
-$(document).on("page:load", myJS);
+
+};
+
+$(document).ready(function() {
+  $(".restaurants").hover(function(){
+    $(this).find(".delete").show();
+    },function(){
+    $(this).find(".delete").hide();
+    });
+});
