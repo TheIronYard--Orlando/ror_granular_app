@@ -15,9 +15,12 @@
 //= require turbolinks
 //= require_tree .
 
-var myJS = {
-  $('.notice').fadeOut(5000);
+var all_ready;
+
+all_ready = function() {
   
+  $('.notice').fadeOut(5000);
+
   $( "#new_restaurant" ).submit(function( event ) { 
     var invalid = false;
     $("input[name*='restaurant']").each(function(){
@@ -29,16 +32,27 @@ var myJS = {
       alert("form not complete");
       event.preventDefault();
     }
-/* or...
-    if($("input[name*='restaurant']").filter(function(){
-      return $(this).val() != ''
-    }).length){
-      //alert, etc
-    }
   });
-*/
-    
-  });
-}
-$(myJS);
-$(document).on("page:load", myJS);
+
+};
+
+$(document).ready(all_ready); // When first loading or hard refresh, eval js
+$(document).on('page:load', all_ready); // When following turbolinks link, eval js
+
+
+
+$(document).ready(function() {
+  $(".restaurant_row").hover(
+
+    function(){
+    $(this).find(".delete_button").show();
+    },
+    function(){
+    $(this).find(".delete_button").hide();
+    });  
+      });
+
+
+
+
+
