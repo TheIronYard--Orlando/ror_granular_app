@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$( ".form" ).click(function( event ) { alert("form not complete");
-  event.preventDefault();
+$(document).ready(function() {
+  $( ".form" ).click(function( event ) { alert("form not complete");
+    event.preventDefault();
+  });
 });
