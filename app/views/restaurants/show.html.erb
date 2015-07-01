@@ -11,12 +11,12 @@
   </thead>
   <tbody>
 
-    <% @restaurant.hours.each do |day, hours| %>
+    <% @restaurant.daily_schedules.each do |daily_schedules| %>
 
       <tr>
         <td><%= day %></td>
-        <td><%= hours["Open"] %></td>
-        <td><%= hours["Closed"] %></td>
+        <td><%= open %></td>
+        <td><%= closed %></td>
       </tr>
     <% end %>
   </tbody>
