@@ -34,6 +34,20 @@ myJS = function() {
     }
   });
 
+  $('.notice').fadeOut(5000);
+  $( "#edit_restaurant" ).submit(function( event ) {
+    var invalid = false;
+    $("input[name*='restaurant']").each(function(){
+      if($(this).val() == ''){
+        invalid = true
+      }
+    });
+    if(invalid){
+      alert("form not complete");
+      event.preventDefault();
+    }
+  });
+
 };
 
 $(document).ready(function() {
