@@ -20,4 +20,4 @@
 <%#= link_to "Add New Restaurant", new_restaurant_path %>
 <h1>New Restaurant</h1>
 
-<%= render 'form' %>
+<%= render partial: 'form', locals: { submit_msg: 'Create New Restaurant'} %>
