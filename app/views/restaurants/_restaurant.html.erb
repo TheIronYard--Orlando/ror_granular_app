@@ -1,4 +1,5 @@
-<tr>
+<tr class="restaurants" id="restaurant_<%= restaurant.id %>">
   <td><%= link_to restaurant.name, restaurant %></td>
   <td><%= restaurant.website %></td>
+  <td><%= button_to 'Delete', restaurant_path(restaurant), method: :delete, :form_class => 'hidden', remote: true %></td>
 </tr>
