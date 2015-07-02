@@ -52,6 +52,10 @@ $(document).ready(function() {
     });  
       });
 
+// why when a restaurant is added, the delete_button shows, but the .hover function doesnt apply to new?
+
+
+
 
 
 

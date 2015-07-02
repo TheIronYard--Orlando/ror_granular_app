@@ -33,7 +33,7 @@ class RestaurantsController < ApplicationController
 
     if @restaurant.save
       flash.now[:notice] = "#{@restaurant.name} has been added to the list"
-      #redirect_to root_url
+      redirect_to root_url
     else
       render 'new'
     end

@@ -1,0 +1,22 @@
+
+<%= form_for @restaurant remote: true  do |f| %>
+<div class= "field">
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+</div>  
+<div class= "field">
+  <%= f.label :website %>
+  <%= f.text_field :website %><br>
+</div>
+<div class= "field">
+  <%= f.label :low_price %>
+  <%= f.text_field :low_price %><br>
+</div>
+<div class= "field">
+  <%= f.label :high_price %>
+  <%= f.text_field :high_price %><br>
+</div>
+<div class= "actions">
+  <%= f.submit "Submit Information" %>
+</div>  
+<% end %>
