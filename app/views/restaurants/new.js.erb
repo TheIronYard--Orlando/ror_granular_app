@@ -1,0 +1,25 @@
+$('<%= j(render "new") %>').appendTo('body');
+
+$( "#new_restaurant" ).submit(function( event ) { 
+  var invalid = false;
+  $("input[name*='restaurant']").each(function(){
+    if($(this).val() == ''){
+      invalid = true
+    }
+  });
+  if(invalid){
+    alert("form not complete");
+    event.preventDefault();
+    return false // event.preventDefault didn't seem to do the job by itself
+  }
+  // These next two lines don't really belong here but they work here 
+  // Logically they have nothing to do with submission they should be executed when ajax response is successful
+  // But ajaxSuccess can only be attached to document, so they will stay here for now.
+  $( "#new_restaurant" ).remove();
+  $( "#new_rest_link" ).show();
+});
+
+// Reset the form fields to blank
+// grab inputs that have the attribute name the contains the phrase "rest"
+// set the value to an empty string
+$('form input[name*=\"rest\"]').val(''); 
