@@ -6,4 +6,8 @@ $('<%= j("<p class='generic_flash notice'>#{flash[:notice]}</p>".html_safe)%>').
 // the call to j escapes the strings inside the parentheses
 // the call to .html_safe prevents Rails from escaping the HTML tags
 // which would otherwise change things like <p into &gt;p
-$('form input[name*=\"rest\"]').val('');
+
+// Reset the form fields to blank
+// grab inputs that have the attribute name the contains the phrase "rest"
+// set the value to an empty string
+$('form input[name*=\"rest\"]').val(''); 

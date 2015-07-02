@@ -16,6 +16,7 @@
 //= require_tree .
 
 var myJS = function(){
+<<<<<<< HEAD
   $('.notice').fadeOut(500);
 
   $( "#new_restaurant" ).submit(function( event ) { 
@@ -49,7 +50,12 @@ var myJS = function(){
   );
   $("#edit_restaurant_link").click(function(){
     $('.hidden').slideDown();
-  })
-};
+  });
+
+  $( "#new_rest_link" ).click(function( event ) { 
+    $( "#new_rest_link" ).hide();
+  });
+}
 $(myJS);
 $(document).on("page:load", myJS);  
+
