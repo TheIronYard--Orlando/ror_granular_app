@@ -42,7 +42,7 @@ $(document).on('page:load', all_ready); // When following turbolinks link, eval 
 
 
 $(document).ready(function() {
-  $(".restaurant_row").hover(
+  $('.table').on('hover', 'restaurant_row'
 
     function(){
     $(this).find(".delete_button").show();
@@ -51,6 +51,9 @@ $(document).ready(function() {
     $(this).find(".delete_button").hide();
     });  
       });
+
+
+
 
 // why when a restaurant is added, the delete_button shows, but the .hover function doesnt apply to new?
 
