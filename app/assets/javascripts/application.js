@@ -14,12 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(myJS);
+$(document).on('page:load', myJS);
+var myJS;
 
-var myJS = function(){
-<<<<<<< HEAD
-  $('.notice').fadeOut(500);
+myJS = function() {
 
-  $( "#new_restaurant" ).submit(function( event ) { 
+
+  $('.notice').fadeOut(5000);
+  $( "#new_restaurant" ).submit(function( event ) {
     var invalid = false;
     $("input[name*='restaurant']").each(function(){
       if($(this).val() == ''){
@@ -40,14 +43,7 @@ var myJS = function(){
   });
 */
   });
-  $("table").on('hover', '.restaurant_row', 
-    function(){
-      $(this).find(".delete_button").show();
-    },
-    function(){
-      $(this).find(".delete_button").hide();
-    }
-  );
+
   $("#edit_restaurant_link").click(function(){
     $('.hidden').slideDown();
   });
@@ -55,7 +51,15 @@ var myJS = function(){
   $( "#new_rest_link" ).click(function( event ) { 
     $( "#new_rest_link" ).hide();
   });
+  $('table').on(
+    {
+      mouseenter: function(){
+        $(this).find(".hidden").show();
+      },
+      mouseleave: function(){
+        $(this).find(".hidden").hide();
+      }
+    }, ".restaurants")
 }
 $(myJS);
 $(document).on("page:load", myJS);  
-
