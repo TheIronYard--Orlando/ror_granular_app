@@ -21,6 +21,9 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %>
+<%= Time.now.strftime("%l:%M:%S") %>
+<%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant), id: 'edit_restaurant_link', remote: true %>
 <%= link_to "Delete Restaurant", restaurant_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<!--<div class="hidden">
+  <%= render partial: 'form', locals: { restaurant: @restaurant } %>
+</div>-->

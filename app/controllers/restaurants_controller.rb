@@ -17,8 +17,11 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
 
     if @restaurant.update(restaurant_params)
-      redirect_to @restaurant
+      #redirect_to @restaurant
+      # instead of a redirect, this can be handled in update.js.erb
     else
+      # really if this action is due to a request that expects a js response,
+      # shouldn't render here either
       render 'edit'
     end
 
@@ -34,7 +37,10 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       flash.now[:notice] = "#{@restaurant.name} has been added to the list"
       #redirect_to root_url
+      # instead of a redirect, this can be handled in create.js.erb
     else
+      # really if this action is due to a request that expects a js response,
+      # shouldn't render here either
       render 'new'
     end
   end

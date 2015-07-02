@@ -2,6 +2,8 @@
 
 $('<%= j(render @restaurant) %>').appendTo('tbody');
 
-$('<p class=\"generic_flash notice\"><%= flash[:notice] %></p>').prependTo('h1');
-
+$('<%= j("<p class='generic_flash notice'>#{flash[:notice]}</p>".html_safe)%>').prependTo('h1');
+// the call to j escapes the strings inside the parentheses
+// the call to .html_safe prevents Rails from escaping the HTML tags
+// which would otherwise change things like <p into &gt;p
 $('form input[name*=\"rest\"]').val('');

@@ -1,0 +1,16 @@
+<%= form_for restaurant, remote: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br>
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+<br>
+  <%= f.label :low_price %>
+  <%= f.text_field :low_price %>
+<br>
+  <%= f.label :high_price %>
+  <%= f.text_field :high_price %>
+<br>
+  <%= f.submit "Edit Restaurant" %>
+  The time is now <%= Time.now.strftime("%l:%M:%S") %>
+<% end %>
